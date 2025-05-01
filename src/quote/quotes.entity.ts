@@ -4,15 +4,22 @@ import {
   Entity,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
+  ManyToOne,
+  JoinColumn
 } from 'typeorm';
+import { User } from '../user/user.entity';
 
-@Entity('posts')
-export class Posts {
+@Entity('quotes')
+export class Quotes {
   @PrimaryGeneratedColumn()
   id: number;
 
   @Column()
   user_id: number;
+
+  @ManyToOne(() => User)
+  @JoinColumn({ name: 'user_id' })
+  user: User;
 
   @Column()
   title: string;

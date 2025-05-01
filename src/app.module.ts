@@ -8,7 +8,7 @@ import { AppService } from './app.service';
 import { AuthGuard } from './auth/auth.guard';
 import { AuthModule } from './auth/auth.module';
 import { UserModule } from './user/user.module';
-import { PostModule } from './post/post.module';
+import { QuoteModule } from './quote/quote.module';
 
 @Module({
   imports: [
@@ -33,7 +33,7 @@ import { PostModule } from './post/post.module';
     }),
     AuthModule,
     UserModule,
-    PostModule
+    QuoteModule
   ],
   controllers: [AppController],
   providers: [

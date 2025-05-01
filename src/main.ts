@@ -1,3 +1,8 @@
+// Polyfill global crypto untuk Railway
+if (typeof (global as any).crypto === 'undefined') {
+  (global as any).crypto = require('crypto');
+}
+
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
